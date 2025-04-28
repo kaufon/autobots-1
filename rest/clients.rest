@@ -1,0 +1,57 @@
+@URL = http://localhost:8080/cliente
+
+
+### Get All Clients
+
+GET {{URL}}/clientes HTTP/1.1
+Content-Type: application/json
+
+### Get Client by Id 
+
+GET {{URL}}/cliente/1 HTTP/1.1
+Content-Type: application/json
+
+### Create Client 
+
+POST {{URL}}/cadastro HTTP/1.1
+Content-Type: application/json
+
+{
+  "nome": "Lucas",
+  "nomeSocial": "Caixao",
+  "dataNascimento": "2000-01-01",
+  "dataCadastro": "2023-10-01",
+  "documentos": [
+    {
+      "tipo": "RG",
+      "numero": "123456789"
+    },
+    {
+      "tipo": "CPF",
+      "numero": "123.456.789-00"
+    }
+  ],
+  "telefones": [
+    { "ddd": "11", "numero": "91234-5678" },
+    { "ddd": "21", "numero": "98765-4321" }
+  ]
+}
+
+### Update client 
+
+PUT {{URL}}/atualizar HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nome": "Joaquim"
+}
+
+### Delete client 
+
+DELETE {{URL}}/excluir HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1
+}

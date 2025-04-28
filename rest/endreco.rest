@@ -1,0 +1,49 @@
+@URL = http://localhost:8080/endereco
+
+
+### Get All Enderecos
+
+GET {{URL}}/enderecos HTTP/1.1
+Content-Type: application/json
+
+### Get Endereco by id 
+
+GET {{URL}}/endereco/1 HTTP/1.1
+Content-Type: application/json
+
+
+
+### Create addres 
+
+POST {{URL}}/cadastro HTTP/1.1
+Content-Type: application/json
+
+{
+  "endereco": {
+    "informacoesAdicionais": "12345678",
+    "codigoPostal": "Rua Teste",
+    "numero": "123",
+    "rua": "Apto 1",
+    "bairro": "Centro",
+    "cidade": "São Paulo",
+    "estado": "SP"
+  },
+  "clienteId": 1
+}
+
+### Update address 
+PUT {{URL}}/atualizar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "cidade": "BILUULULULU PAULISTA"
+}
+
+### Delete address
+DELETE {{URL}}/deletar HTTP/1.1
+Content-Type: application/json
+
+{
+  "id": 1
+}

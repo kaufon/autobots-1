@@ -1,0 +1,38 @@
+@URL = http://localhost:8080/documento
+
+### Get All Documents 
+GET {{URL}}/documentos HTTP/1.1
+Content-Type: application/json
+
+### Get by id
+GET {{URL}}/documento/1 HTTP/1.1
+
+
+### Create Document 
+POST {{URL}}/cadastro HTTP/1.1
+Content-Type: application/json 
+
+{
+  "documento": { 
+    "tipo": "meow",
+    "numero": "12345678910"
+  },
+  "clienteId": 1
+}
+### Update Document 
+PUT {{URL}}/atualizar HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 1,
+    "tipo": "meow meow meow",
+    "numero": "42069"
+}
+
+### Delete Document 
+DELETE {{URL}}/deletar HTTP/1.1 
+Content-Type: application/json
+
+{
+    "id": 1
+}
